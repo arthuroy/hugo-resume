@@ -8,6 +8,8 @@
     </div>
   {{ end }}
   <div class="resume-date">
+    {{$first := true}}
+    <p>{{ range $i, $time := .Params.Period }}{{if $i}} – {{end}}{{ dateFormat "Jan 2006" $time }}{{ end }}</p>
     <p>{{ .Description | safeHTML }}<p>
     <p class><a href="{{.Permalink}}">Read more..</a></p>
   </div>
